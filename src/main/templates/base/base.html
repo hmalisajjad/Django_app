@@ -7,7 +7,7 @@
     <meta name="author" content="Udemy Django Course">
     <meta name="description" content="">
     <link href="{% static 'css/bootstrap.min.css'%}" rel="stylesheet">
-    <link href="{% static '.css/style.css' %}" rel="stylesheet">
+    <link href="{% static 'css/style.css'%}" rel="stylesheet">
     <title>AutoStore</title>
 </head>
 
@@ -22,6 +22,8 @@
     <div class="container">
         <p class="float-end mb-1"> Powered by</p>
         <p class="mb-1"> AutoStore - Best Place to Classified Cars</p>
+        <p class='mb-0'> Copyright © {% now 'Y' %} <a href="" class="text-white">AutoStore</a> Course Project by <a href="https://www.udemy.com/course/python-django-the-complete-django-web-development-course"
+            class="text-white">Udemy.com</a></p>
     </div>
 </footer>
 {% endblock %}
