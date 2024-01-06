@@ -2,4 +2,4 @@ from django.shortcuts import render
 from django.http import HttpResponse
 
 def home_view(request):
-    return HttpResponse("<h1> Welcome to Autostore!</h1>")
+    return render(request, "views/home.html", {"name": "AutoStore"})
