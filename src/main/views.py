@@ -58,3 +58,14 @@ def listing_view(request, id):
         messages.error(request, f'Invalid UID {id} was provided for listing.')
         return redirect('home')
    
+@login_required
+def edit_view(request, id):
+    try:
+        if request.method == 'POST':
+            pass
+        else:
+            pass
+    except Exception as e:
+        messages.error(
+            request, f'An error occured while trying to access the edit page.')
+    return render(request, 'views/edit.html')
