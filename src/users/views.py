@@ -5,6 +5,7 @@ from django.shortcuts import redirect
 from django.contrib import messages
 from django.views import View
 from django.contrib.auth.decorators import login_required
+from django.utils.decorators import method_decorator
 
 def login_view(request):
     if request.method == 'POST':
@@ -48,3 +49,9 @@ class RegisterView(View):
         else:
             messages.error(request, f'An error occured trying to register.')
             return render(request, 'views/register.html', {'register_form': register_form})
+        
+@method_decorator(login_required, name='dispatch')
+class ProfileView(View):
+
+    def get(self, request):
+        return render(request, 'views/profile.html', {})
